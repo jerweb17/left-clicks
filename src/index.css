@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* The AI Pitch page manages its own background and colors inline.
+   No global dark overrides - let the portfolio's style.css handle body styling. */

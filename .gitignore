@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+dist/
+.env
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Scripts & Temp Data
+*.zip
+*.log
+response.json
+test_event.json
+test_payload.json
+lead_request.json

@@ -1,0 +1,5 @@
+[
+  { "player": "Luka Doncic", "team": "DAL", "ppg": 33.9, "apg": 9.8, "rpg": 9.2, "spg": 1.4, "bpg": 0.5 },
+  { "player": "Giannis Antetokounmpo", "team": "MIL", "ppg": 30.4, "apg": 6.5, "rpg": 11.5, "spg": 1.2, "bpg": 1.1 },
+  { "player": "Shai Gilgeous-Alexander", "team": "OKC", "ppg": 30.1, "apg": 6.2, "rpg": 5.5, "spg": 2.0, "bpg": 0.9 }
+]
