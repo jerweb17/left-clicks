@@ -777,6 +777,18 @@ html, body {
     height: 90vh !important;
     max-height: 90vh !important;
   }
+  #pipeline-overlay .glass-panel, #agent-modal .glass-panel {
+    display: block !important;
+    overflow-y: auto !important;
+  }
+  .pitch-card > div {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+  #playground-terminal, .terminal-preview-split > div {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 }
 
 /* Staggered Timeline padding and positioning updates on small screens */
@@ -787,6 +799,9 @@ html, body {
   }
   .header-logo {
     font-size: 1.05rem !important;
+  }
+  .main-header .social-icon-link {
+    display: none !important;
   }
 
   /* BentoGrid Career Timeline node/line coordinates shift */
@@ -827,6 +842,19 @@ html, body {
   .step-indicator {
     font-size: 0.78rem !important;
     padding: 6px 2px !important;
+  }
+  
+  /* Stagger form elements on narrow screens */
+  .contact-pitch-form form > div {
+    flex-direction: column !important;
+    gap: var(--spacing-xs) !important;
+  }
+  .contact-pitch-form form > div > input {
+    width: 100% !important;
+  }
+  .warning-tag, .success-tag {
+    font-size: 0.6rem !important;
+    padding: 1px 4px !important;
   }
 }
 

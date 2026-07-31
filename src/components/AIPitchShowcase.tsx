@@ -294,6 +294,17 @@ export const AIPitchShowcase: React.FC<AIPitchShowcaseProps> = ({ onBack }) => {
                 gap: 40px;
               }
             }
+            .pitch-form-grid {
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 16px;
+              margin-bottom: 16px;
+            }
+            @media (min-width: 480px) {
+              .pitch-form-grid {
+                grid-template-columns: 1fr 1fr;
+              }
+            }
             .pitch-input:focus {
               border-color: ${colors.inputFocus} !important;
               box-shadow: 0 0 0 3px rgba(0,102,204,0.15);
@@ -481,7 +492,7 @@ export const AIPitchShowcase: React.FC<AIPitchShowcaseProps> = ({ onBack }) => {
                 )}
 
                 <form onSubmit={handleSubmit}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                  <div className="pitch-form-grid">
                     <div>
                       <label style={labelStyle}>Recruiter Name</label>
                       <input
