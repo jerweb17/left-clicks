@@ -15,6 +15,7 @@
   
   /* Layout */
   --border-radius: 20px;
+  --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
@@ -728,6 +729,105 @@ p {
   color: #fff !important;
   background: rgba(56, 189, 248, 0.1) !important;
   border: 1px solid rgba(56, 189, 248, 0.25) !important;
+}
+
+/* ==============================================================================
+   Mobile Responsiveness Enhancements (Comprehensive Mobile UX Adjustments)
+   ============================================================================== */
+
+/* Prevent double horizontal scrollbars globally */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}
+
+/* Ensure outer flex containers fit the screen width */
+#app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Project Sizing: fluid scaling for video/screenshot slides on mobile */
+.project-media-box {
+  width: 100%;
+  height: 360px;
+}
+
+/* Staggered Glass Panel Padding and Corner Radii for Mobile Devices */
+@media (max-width: 768px) {
+  .glass-panel {
+    padding: var(--spacing-md) !important;
+    border-radius: 14px !important;
+  }
+  .project-media-box {
+    height: 220px !important;
+  }
+  .carousel-arrow {
+    display: none !important; /* Hide arrows on mobile to rely on native touch swipes */
+  }
+  
+  /* Modal responsive wrapper pad adjustments */
+  #pipeline-overlay, #terminal-overlay, #agent-modal {
+    padding: var(--spacing-sm) !important;
+  }
+  #pipeline-overlay .glass-panel, #terminal-overlay .glass-panel, #agent-modal .glass-panel {
+    padding: var(--spacing-md) !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
+  }
+}
+
+/* Staggered Timeline padding and positioning updates on small screens */
+@media (max-width: 480px) {
+  /* Header logo badge hiding and branding adjustments */
+  .logo-badge {
+    display: none !important;
+  }
+  .header-logo {
+    font-size: 1.05rem !important;
+  }
+
+  /* BentoGrid Career Timeline node/line coordinates shift */
+  .timeline-item {
+    padding-left: 36px !important;
+  }
+  .timeline-line {
+    left: 12px !important;
+  }
+  .timeline-node {
+    left: 7px !important;
+    width: 12px !important;
+    height: 12px !important;
+    top: 24px !important;
+  }
+  .experience-timeline-container h3 {
+    font-size: 1.15rem !important;
+  }
+  .experience-timeline-container h4 {
+    font-size: 0.9rem !important;
+  }
+  .timeline-date-label {
+    font-size: 0.78rem !important;
+    padding: 2px 8px !important;
+    margin-top: var(--spacing-xs) !important;
+    display: inline-block !important;
+  }
+
+  /* Page Footer responsive column stacking */
+  .page-footer {
+    flex-direction: column !important;
+    text-align: center !important;
+    justify-content: center !important;
+    gap: var(--spacing-sm) !important;
+  }
+
+  /* Database Showcase Step Indicators font reduction */
+  .step-indicator {
+    font-size: 0.78rem !important;
+    padding: 6px 2px !important;
+  }
 }
 
 

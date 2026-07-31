@@ -23,7 +23,7 @@ export function renderProjectsShowcase() {
             </p>
             
             <!-- Screenshot Carousel -->
-            <div class="carousel-container" style="position: relative; height: 360px; border-radius: 12px; overflow: hidden; background: #070b12; border: 1px solid var(--glass-border);">
+            <div class="carousel-container project-media-box" style="position: relative; border-radius: 12px; overflow: hidden; background: #070b12; border: 1px solid var(--glass-border);">
               
               <!-- Desktop Navigation Arrows -->
               <button class="carousel-arrow prev-arrow" aria-label="Previous Slide" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.15); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 15; transition: background-color 0.2s, opacity 0.2s; opacity: 0.75;">
@@ -96,7 +96,7 @@ export function renderProjectsShowcase() {
             </p>
             
             <!-- Video Container -->
-            <div class="video-container" style="position: relative; height: 360px; border-radius: 12px; overflow: hidden; background: #070b12; border: 1px solid var(--glass-border);">
+            <div class="video-container project-media-box" style="position: relative; border-radius: 12px; overflow: hidden; background: #070b12; border: 1px solid var(--glass-border);">
               <video id="hardware-demo-video" controls preload="metadata" style="width: 100%; height: 100%; object-fit: contain; background: #070b12; display: none;">
                 <source src="/assets/hardware-demo.mp4" type="video/mp4">
               </video>

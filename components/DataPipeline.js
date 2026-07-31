@@ -14,7 +14,7 @@ export function renderDataPipeline() {
           <p style="font-size: 0.95rem; margin-top: 4px;">Explore how raw data is ingested, transformed, and visualized.</p>
         </div>
 
-        <div style="display: flex; gap: 8px; margin: var(--spacing-md) 0;">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: var(--spacing-md) 0;">
           <button class="btn btn-secondary pipeline-tab active" data-dataset="ai">AI Productivity (Mixed Chart)</button>
           <button class="btn btn-secondary pipeline-tab" data-dataset="pokemon">Pokémon TCG (Scatter Plot)</button>
           <button class="btn btn-secondary pipeline-tab" data-dataset="nba">NBA Stats (Radar Chart)</button>

@@ -1,6 +1,6 @@
 export function renderFooter() {
   return `
-    <footer style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md); color: var(--text-secondary); font-size: 0.95rem;">
+    <footer class="page-footer" style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-md); color: var(--text-secondary); font-size: 0.95rem;">
       
       <div>
         <strong>Education:</strong> B.S. Information Systems, BYU (2009) | Full Stack Web Dev, Udacity (2017)
