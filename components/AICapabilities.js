@@ -3,8 +3,11 @@ export function renderAICapabilities() {
     <section id="ai-capabilities-section" class="ai-capabilities-container" style="margin-top: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-md);">
       
       <div style="text-align: left; margin-bottom: var(--spacing-sm);">
-        <h2 style="display: flex; align-items: center; gap: 8px; font-size: clamp(1.8rem, 3vw, 2.2rem);">
-          <i class="ph ph-sparkle" style="color: var(--accent-color);"></i> AI-First Capabilities & Workflow
+        <h2 style="display: flex; align-items: center; gap: 10px; font-size: clamp(1.8rem, 3vw, 2.2rem);">
+          <video autoplay loop muted playsinline style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--glass-border); background: #070b12; flex-shrink: 0; box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);">
+            <source src="/assets/left-clicks-logo-animate.mp4" type="video/mp4">
+          </video>
+          AI-First Capabilities & Workflow
         </h2>
         <p style="color: var(--text-secondary); margin-top: 4px;">Pioneering rapid feature shipping by pairing developer oversight with agentic code generation.</p>
       </div>

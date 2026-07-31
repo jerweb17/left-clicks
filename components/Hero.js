@@ -4,6 +4,13 @@ export function renderHero() {
       
       <!-- Left Column: Bio / Pitching Left Clicks Dev -->
       <div class="hero-copy" style="grid-column: span 7 / span 12; display: flex; flex-direction: column; gap: var(--spacing-md); text-align: left;">
+        <!-- Animated Logo Agency Badge -->
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 102, 204, 0.05); border: 1px solid rgba(0, 102, 204, 0.12); padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 600; color: var(--accent-color); margin-bottom: var(--spacing-xs); align-self: flex-start; user-select: none;">
+          <video autoplay loop muted playsinline style="width: 18px; height: 18px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(0, 102, 204, 0.2);">
+            <source src="/assets/left-clicks-logo-animate.mp4" type="video/mp4">
+          </video>
+          AI-First Product Development Agency
+        </div>
         <h1 class="hero-title" style="margin-bottom: var(--spacing-sm);">
           Jeremy R. Webster
         </h1>

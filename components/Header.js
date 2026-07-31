@@ -2,7 +2,10 @@ export function renderHeader() {
   return `
     <header class="main-header glass-panel">
       <div class="header-container">
-        <a href="#" class="header-logo">
+        <a href="#" class="header-logo" style="display: flex; align-items: center; gap: 8px;">
+          <video autoplay loop muted playsinline style="width: 26px; height: 26px; border-radius: 50%; object-fit: cover; background: #070b12; border: 1px solid rgba(255, 255, 255, 0.15); flex-shrink: 0;">
+            <source src="/assets/left-clicks-logo-animate.mp4" type="video/mp4">
+          </video>
           Left Clicks Development
           <span class="logo-badge">Freelance & Contract</span>
         </a>
