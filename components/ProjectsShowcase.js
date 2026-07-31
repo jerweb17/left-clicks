@@ -33,7 +33,7 @@ export function renderProjectsShowcase() {
                 <i class="ph ph-caret-right" style="font-size: 1.25rem; font-weight: bold;"></i>
               </button>
 
-              <div class="carousel-slides" style="width: 300%; height: 100%; display: flex; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
+              <div id="pueblo-slides-container" class="carousel-slides" style="width: 300%; height: 100%; display: flex; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);">
                 
                 <!-- Slide 1 -->
                 <div class="carousel-slide" style="width: 33.333%; height: 100%; position: relative;">
@@ -68,7 +68,7 @@ export function renderProjectsShowcase() {
               </div>
               
               <!-- Navigation dots -->
-              <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10; user-select: none;">
+              <div id="pueblo-dots-container" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10; user-select: none;">
                 <span class="carousel-dot active" data-slide="0" style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-color); cursor: pointer; transition: opacity 0.2s;"></span>
                 <span class="carousel-dot" data-slide="1" style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: opacity 0.2s;"></span>
                 <span class="carousel-dot" data-slide="2" style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: opacity 0.2s;"></span>
@@ -167,7 +167,44 @@ export function renderProjectsShowcase() {
 }
 
 export function initProjectsShowcase() {
-  // 1. Pueblo Screenshot Carousel
+  // 1. Pueblo Screenshot Carousel Mobile vs. Desktop Swapping
+  const slidesContainer = document.getElementById('pueblo-slides-container');
+  const dotsContainer = document.getElementById('pueblo-dots-container');
+  const isMobile = window.innerWidth < 768;
+
+  let totalSlides = 3;
+
+  if (slidesContainer && dotsContainer && isMobile) {
+    // Swap to mobile screenshots (2 slides)
+    slidesContainer.style.width = '200%';
+    slidesContainer.innerHTML = `
+      <!-- Slide 1 -->
+      <div class="carousel-slide" style="width: 50%; height: 100%; position: relative;">
+        <img src="/assets/pueblo-mobile1.png" alt="Pueblo Language Mobile 1" class="carousel-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="width:100%; height:100%; object-fit:contain; background:#070b12;">
+        <div class="carousel-placeholder" style="display:none; width:100%; height:100%; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(135deg, #1e293b, #0f172a); color:#94a3b8; padding: 20px; text-align:center;">
+          <i class="ph ph-phone" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 8px;"></i>
+          <strong style="color: #fff; font-size: 0.9rem;">Pueblo Mobile (Screenshot 1)</strong>
+          <span style="font-size: 0.75rem; opacity: 0.7; margin-top: 4px;">Copy "pueblo-mobile1.png" to public/assets/</span>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-slide" style="width: 50%; height: 100%; position: relative;">
+        <img src="/assets/pueblo-mobile2.png" alt="Pueblo Language Mobile 2" class="carousel-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="width:100%; height:100%; object-fit:contain; background:#070b12;">
+        <div class="carousel-placeholder" style="display:none; width:100%; height:100%; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(135deg, #0f172a, #1e293b); color:#94a3b8; padding: 20px; text-align:center;">
+          <i class="ph ph-phone" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 8px;"></i>
+          <strong style="color: #fff; font-size: 0.9rem;">Pueblo Mobile (Screenshot 2)</strong>
+          <span style="font-size: 0.75rem; opacity: 0.7; margin-top: 4px;">Copy "pueblo-mobile2.png" to public/assets/</span>
+        </div>
+      </div>
+    `;
+
+    dotsContainer.innerHTML = `
+      <span class="carousel-dot active" data-slide="0" style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-color); cursor: pointer; transition: opacity 0.2s;"></span>
+      <span class="carousel-dot" data-slide="1" style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: opacity 0.2s;"></span>
+    `;
+    totalSlides = 2;
+  }
+
   const dots = document.querySelectorAll('.carousel-dot');
   const slides = document.querySelector('.carousel-slides');
   const container = document.querySelector('.carousel-container');
@@ -175,14 +212,13 @@ export function initProjectsShowcase() {
   const nextBtn = document.querySelector('.next-arrow');
 
   let currentSlide = 0;
-  const totalSlides = 3;
 
   if (slides) {
     // Shared transition/update mechanism
     function updateCarousel(index) {
       currentSlide = (index + totalSlides) % totalSlides;
-      // Translate by 33.333% per slide since we have 3 slides
-      slides.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+      const slidePercentage = totalSlides === 2 ? 50 : 33.333;
+      slides.style.transform = `translateX(-${currentSlide * slidePercentage}%)`;
       
       dots.forEach((d, i) => {
         if (i === currentSlide) {
