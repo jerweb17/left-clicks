@@ -13,7 +13,7 @@ export function renderAICapabilities() {
       </div>
 
       <!-- Main Columns: Pitch on Left, Tool Stack on Right -->
-      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--spacing-lg); align-items: stretch;">
+      <div class="capabilities-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--spacing-lg); align-items: stretch;">
         
         <!-- Left Column: The Velocity Pitch & Division of Labor -->
         <div class="glass-panel capabilities-left" style="display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-sm); padding: var(--spacing-lg); text-align: left;">

@@ -576,21 +576,28 @@ p {
 
 @media (max-width: 1024px) {
   .hero-container {
-    gap: var(--spacing-lg);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--spacing-lg) !important;
   }
   .hero-visual {
-    grid-column: span 12 / span 12 !important;
+    width: 100% !important;
   }
   .hero-copy {
-    grid-column: span 12 / span 12 !important;
-    text-align: center;
-    align-items: center;
+    width: 100% !important;
+    text-align: left !important;
+    align-items: flex-start !important;
   }
   .hero-copy p {
-    margin: 0 auto;
+    margin: 0 !important;
   }
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start !important;
+  }
+  .capabilities-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--spacing-lg) !important;
   }
   .capabilities-left, .capabilities-right {
     grid-column: span 12 !important;
