@@ -39,10 +39,9 @@ export function initHeader() {
   const darkIcon = themeToggle.querySelector('.theme-icon-dark');
   const lightIcon = themeToggle.querySelector('.theme-icon-light');
 
-  // Load saved theme or system theme preference
+  // Load saved theme, defaulting to light mode
   const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+  const initialTheme = savedTheme || 'light';
 
   setTheme(initialTheme);
 
